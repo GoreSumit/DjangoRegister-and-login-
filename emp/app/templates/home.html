@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+      .transform{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 88, 59);
+            transition-duration: 0.5s;
+            border-radius: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            text-align: center;
+          
+        }
+        .transform:hover{
+            transform:scale(1.1);
+            transition-duration: 0.5s;
+        }
+        h1{
+            color: aliceblue;
+        }
+        #content1{
+          margin-top: 200px;
+        }
+        
+    </style>
+    <title>Home</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Project</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/details">User Details</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+<div class="container">
+    {% if msg1 %}
+    <div class="alert alert-success text-center" role="alert">
+        {{msg1}}
+    </div>
+    {% endif %}
+    {% if msg2 %}
+    <div class="alert alert-danger text-center" role="alert">
+        {{msg2}}
+    </div> 
+    {% endif %}
+</div>
+
+<div class="container" id="content1">
+  
+    <div class="row text-center">
+      
+      
+      <div class="col-4">
+        <a href="/login" style="text-decoration: none;">
+        <div class="transform" style="padding-top:60px;">
+          <h1>Login</h1>
+        </div>
+      </a>
+      </div>
+
+        <div class="col-4">
+          <a href="/register" style="text-decoration: none;">
+          <div class="transform" style="padding-top:60px;">
+            <h1>Register</h1>
+          </div>
+        </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/details" style="text-decoration: none;">
+          <div class="transform" style="padding-top:45px;">
+            <h1>User Details</h1>
+          </div>
+        </a>
+        </div>
+
+    </div>
+  
+  </div>
+      
+    
+
+    
+</body>
+</html>
